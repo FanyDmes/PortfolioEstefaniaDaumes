@@ -1,0 +1,16 @@
+:root {
+    
+    --dark: #100414;
+    --light: #a8a9b4;
+    --grey: #2c2f3f;
+    --blue: #8214dd;
+    --white: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark);
+}
