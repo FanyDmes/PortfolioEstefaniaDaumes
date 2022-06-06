@@ -15,12 +15,7 @@ body {
     background-color: var(--dark);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
     font-family: "Raleway", sans-serif;
 }
 
@@ -84,6 +79,7 @@ input[type=number] {
 
     .hero-container {
         background-attachment: fixed;
+
     }
 }
 
