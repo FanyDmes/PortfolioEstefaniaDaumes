@@ -1,5 +1,9 @@
+/*
+==========
+ESTILOS GLOBALES
+==========
+*/
 :root {
-
     --dark: #100414;
     --light: #a8a9b4;
     --grey: #2c2f3f;
@@ -15,7 +19,7 @@ body {
     background-color: var(--dark);
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
 }
 
@@ -33,59 +37,74 @@ a, a:link, a:visited {
     text-decoration: none;
 }
 
-/* Eliminación las flechas de los input de tipo number.*/
+/* Eliminamos las flechas de los input de tipo number.*/
 
-/* Chrome */
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
-/* BOOTSTRAP */
+/*
+==========
+MODIFICACIONES A ESTILOS DE BOOTSTRAP
+==========
+*/
 
-/*Solución a desplazamiento de fondo al abrir ventana modal*/
+
+/*Soluciona desplazamiento de fondo al abrir ventana modal*/
 
 .modal-open {
     overflow: auto !important;
     padding-right: 0 !important;
 }
+
+/*Modificamos los colores de los input por defecto de Bootstrap*/
 .form-control {
     background-color: var(--dark);
     color: var(--white);
 }
+
 .form-control:focus {
     background-color: var(--dark);
     color: var(--white);
 }
 
-/* HOME & HERO IMAGE */
+
+/*
+==========
+SECCIÓN HOME & HERO IMAGE
+==========
+*/
+
 
 .hero-container {
     width: 100%;
     height: 100vh;
-    background-image: url("../src/assets/hero-image.jpg");
+    background-image: url("../assets/hero-image.jpg");
     background-position: center center;
     background-size: cover;
 }
 
 @media (min-width: 1200px) {
-
+        /*
+    - Agregamos el Background attachment únicamente en resoluciones mayores, ya que genera conflictos en Mobile.
+    */
 
     .hero-container {
         background-attachment: fixed;
-
-    }
+    } 
 }
 
 .hero-container::before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6); /*Filtro para oscurecer la imagen*/
     position: absolute;
     inset: 0;
     z-index: 1;
@@ -95,24 +114,33 @@ input[type=number] {
 
 .home-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; /*Posicionamos y colocamos el texto por encima del fondo y su filtro.*/
     color: var(--white);
-    transition: opacity 1s ease-in;
-
+    transition: opacity 1s ease-in; /*Agregamos transicion para la opacidad*/
 }
 
 .move {
-    transition: .5s;
-}
+    transition: .5s; /*Añadimos una transición al momento de modificarse el margen*/
+} 
 
+/* Movemos el contenedor a la derecha en pantallas grandes, para que la barra lateral no tape el contenido. */
 @media (min-width:1200px) {
-
+    /*
+    - Movemos el contenido a la derecha en resolucionbes mayores a.
+    */
     .move {
         margin-left: 280px;
         transition: .5s;
     }
 }
-/* Barra de navegación */
+
+
+
+/*
+==========
+BARRA DE NAVEGACIÓN
+==========
+*/
 
 .toggler-btn {
     position: fixed;
@@ -133,16 +161,17 @@ input[type=number] {
     border-radius: 100%;
     
 }
+
 @media (min-width: 1200px) {
-
-    /* Configuración del botón para que desaparezca en resoluciones mayores a 1200px.*/
-    
-        .toggler-btn {
-            display: none;
-        }
+    /*
+    - Configuramos el boton para que desaparezca en resoluciones mayores a 1200px.
+    */
+    .toggler-btn {
+        display: none;
     }
+}
 
-    .sidebar {
+.sidebar {
     position: fixed;
     inset: 0;
     z-index: 50;
@@ -162,7 +191,9 @@ input[type=number] {
     transform: translateX(0);
     transition: transform .5s;
 }
-/* Se permite en scroll en dispositivos de menor altura. */
+
+
+/* Permitimos en scroll en dispositivos de menor altura, pero escondemos la barra de scroll de los distintos dispositivos.  */
 
 @media (max-height: 730px ) {
     .sidebar {
@@ -175,20 +206,22 @@ input[type=number] {
     }
 }
 
-/* Se oculta la barra lateral si el usuario intenta "imprimir" el sitio.*/
+/* Ocultamos la barra lateral si el usuario intenta "imprimir" el sitio.*/
 @media print  {
     aside {
         display: none;
     }
 }
 
+/*Propiedad que usamos para ocultar la barra de navegación.*/
+.hidebar {
+    transform: translateX(-100%);
+}
 
 .user-profile {
-    width: 120px;
+    width: 150px;
     border: .5rem solid var(--grey);
     border-radius: 100%;
-    height: 172px;
-    width: 150px;
 }
 
 .social li {
@@ -259,7 +292,13 @@ input[type=number] {
     width: 100px;
     height: 60px;
 }
-/* Estilos en general*/
+
+
+/*
+==========
+ESTILOS DE SECCIONES (GENERAL)
+==========
+*/
 
 .section-info {
     background-color: var(--dark);
@@ -280,7 +319,16 @@ input[type=number] {
     background-color: var(--blue);
     margin-top: 1rem;
 }
-/* Sección sobre mi */
+
+/*
+==========
+SECCIÓN "SOBRE MÍ"
+==========
+*/
+
+.about-img {
+    border-radius: 1rem;
+}
 
 .info-item {
     position: relative;
@@ -310,24 +358,30 @@ input[type=number] {
     font-size: 1rem;
 }
 
-/* Sección proyectos" */
+/*
+==========
+SECCIÓN "PROYECTOS"
+==========
+*/
 
 .project-cards {
     display: grid;
     grid-gap: 1rem;
 }
-/* Alineación en dos columnas en resoluciones de tablet y escritorio.*/
+/* Alineamos los proyectos en dos columnas en resoluciones de tablet y escritorio.*/
 @media (min-width: 750px) {
     .project-cards{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 .card {
     background-color: var(--dark);
     border-color: var(--light);
     transform: scale(1);
     transition: .2s ease;
 }
+
 .card img {
     opacity: 1;
     transition: .5s;
@@ -363,8 +417,11 @@ input[type=number] {
     transition: .5s;
 }
 
-
-/* Estilos iconos para editar */
+/*
+==========
+ESTILOS ICONOS PARA EDITAR
+==========
+*/
 
 .edit-icon {
     margin-bottom: 1.5rem;
@@ -375,10 +432,12 @@ input[type=number] {
     cursor: pointer;
 }
 
-
-/* Estilos modales */
+/*
+==========
+ESTILO MODALES
+==========
+*/
 
 .modal button[type=submit] {
     margin-right: .5rem;
 }
-

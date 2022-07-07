@@ -1,0 +1,27 @@
+<!--Sección "Habilidades"-->
+<section id="skills" class="section-info">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-header d-flex justify-content-between align-items-center">
+                <h2 class="fw-bold">Habilidades</h2>
+                <app-edit-button [isEditing]="isEditing" (onToggleEdition)="toggleEdition($event)"></app-edit-button>
+            </div>
+            <!-- Contenido editable, utilizamos directivas y binding para manejarlo-->
+            <app-edit-component *ngIf="isEditing" [editableData]="sectionData"
+                (onToggleEdition)="toggleEdition($event)"></app-edit-component>
+            <p *ngIf="!isEditing" [innerHTML]="sectionData"></p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 mt-5">
+                <app-skills-list [url]="urlList[0]" [skillsTitle]="'Front-End'" [skillsArray]="skillsList[0]"[barColor]="'bg-warning'" id="frontend"></app-skills-list>
+            </div>
+
+            <app-skills-list [url]="urlList[1]" [skillsTitle]="'Back-End'" [skillsArray]="skillsList[1]"[barColor]="'bg-info'" id="backend" class="col-lg-4 mt-5"></app-skills-list>
+
+            <app-skills-list [url]="urlList[2]" [skillsTitle]="'Soft-Skills'" [skillsArray]="skillsList[2]"[barColor]="'bg-success'" id="soft" class="col-lg-4 mt-5"></app-skills-list>
+        </div>
+
+    </div>
+</section>

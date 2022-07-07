@@ -1,5 +1,9 @@
-/* Variables */
 
+/*
+==========
+- Definimos las variables
+==========
+*/
 const sidebar = document.querySelector('.sidebar');
 const button = document.querySelector('.toggler-btn');
 const closeButton = document.querySelector('.close-btn');
@@ -9,7 +13,12 @@ const minWidth = window.matchMedia('(min-width: 1200px)');
 let isOpen;
 
 
-/* Función para cambiar el estado de la barra de navegación. */
+/*
+==========
+- Función para cambiar el estado de la barra de navegación. 
+- Aprovechamos la clase "d-none" de Bootstrap para ocultar o mostrar los iconos.
+==========
+*/
 
 function openSideBar() {
     sidebar.classList.remove('hidebar');
@@ -43,11 +52,15 @@ function loadSideBar() {
 
 function loadTitle() {
     headerContent.classList.remove('opacity-0');
-} //Remueve la clase que le otorga 0 opacidad
+} //Removemos la clase que le otorga 0 opacidad
 
 
 
-/* Disparadores de función.*/
+/*
+==========
+- Disparadores de función.
+==========
+*/
 button.addEventListener('click', toggleSideBar);
 window.addEventListener('load', () => {
     loadSideBar();

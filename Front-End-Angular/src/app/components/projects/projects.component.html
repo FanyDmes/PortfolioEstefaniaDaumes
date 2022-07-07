@@ -1,0 +1,25 @@
+<!--Sección "Proyectos"-->
+<section id="projects" class="section-info">
+    <div class="container">
+        <div class="section-title">
+            <div class="section-header d-flex justify-content-between align-items-center">
+                <h2 class="fw-bold">Proyectos</h2>
+                <div>
+                  <app-edit-button [isEditing]="isEditing" (onToggleEdition)="toggleEdition($event)"></app-edit-button>
+                  <app-add-button *ngIf="!isAdding" [itemsList]="projectsList" [isAdding]="isAdding"(onToggleAdding)="toggleAdding($event)"></app-add-button>
+                </div>
+            </div>
+            <!-- Contenido editable, utilizamos directivas y binding para manejarlo-->
+            <app-edit-component *ngIf="isEditing" [editableData]="projectsDescription"
+                (onToggleEdition)="toggleEdition($event)" (onSave)="saveChanges($event)"></app-edit-component>
+            <!-- Utilizamos [innerHTML] en lugar de Template Binding para poder utilizar marcado HTML en nuestro texto (negrita, salto de linea, cursiva, etc.) -->
+            <p *ngIf="!isEditing" [innerHTML]="projectsDescription"></p>
+        </div>
+        <div class="row">
+            <div id="project-cards" class="col-lg-12 project-cards">
+               <app-project-add *ngIf="isAdding" [isAdding]="isAdding" [itemsList]="projectsList"(onToggleAdding)="toggleAdding($event)" (onAddItem)="addItem($event)"></app-project-add>
+               <app-project-item *ngFor="let project of projectsList; let i = index" [projectItem]="project" [url]="url + '/' + project.id" [index]="i" (onItemDelete)="deleteItem(project, i)"></app-project-item>
+            </div>
+        </div>
+    </div>
+</section>
