@@ -201,7 +201,7 @@ INSERT persona VALUES (1, 'Estefania Daumes', 'Desarrollador Web Fullstack Jr.',
 
 INSERT portfolio VALUES (1, 1);
 
-INSERT seccion VALUES(1, 1, 1, 'Hero', 1, '../assets/hero-image.jpg');
+INSERT seccion VALUES(1, 1, 1, 'Hero', 1, 'assets/hero-image.jpg');
 
 INSERT seccion VALUES(2, 1, 1, 'Sobre Mí', 'Hola! Mi nombre es Estefania y soy una recién graduada de Argentina Programa.<br> Mi objetivo es poder trabajar como Full Stack Develloper y continuar adquiriendo conocimientos, soy muy responsable y dedicada en todo aquello que emprendo, me gustaria formar parte de grandes proyectos que me permitan desarrollarme como profesional y mejorar mis habilidades.','../assets.about.png');
 
@@ -210,30 +210,51 @@ INSERT seccion VALUES(3, 1, 1,'Habilidades',NULL,NULL);
 INSERT seccion VALUES(4, 1, 1, 'Proyectos',NULL,NULL);
 
 INSERT seccion VALUES(5, 1, 1, 'Contacto', 'Ingresá tus datos así estamos en contacto.' , NULL);
+
 INSERT tipo_habilidad VALUES(1, 'Front-End');
 
 INSERT tipo_habilidad VALUES(2, 'Back-End');
 
 INSERT tipo_habilidad VALUES(3, 'Soft-Skill');
 
-INSERT nivel_habilidad VALUES (NULL, "");
+INSERT nivel_habilidad VALUES (1, Básico);
 
-INSERT nivel_habilidad VALUES (NULL, "");
+INSERT nivel_habilidad VALUES (2, Intermedio);
 
-INSERT nivel_habilidad VALUES (NULL, "");
+INSERT nivel_habilidad VALUES (3, Avanzado);
 
-INSERT habilidades VALUES (NULL, 1, 3, 1, "HTML", 80, "fa-brands fa-html5");
+INSERT habilidad VALUES (1, 1, 3, 1, 'HTML', 80, 'fa-brands fa-html5');
 
-INSERT habilidades VALUES (NULL, 2, 1, 1, "Java/Spring Boot", 40, "fa-brands fa-java");
+INSERT habilidad VALUES (2, 1, 3, 1, 'CSS', 80, 'fa-brands fa-html5');
 
-INSERT habilidades VALUES (NULL, 3, 3, 1, "Workteam", 100, "fa-solid fa-people-carry-box");
+INSERT habilidad VALUES (3, 1, 2, 1, 'JavaScript', 60, 'fa-brands fa-html5');
 
-INSERT educacion VALUES (NULL, 1, "Desarrollo Web Fullstack", "2021 - 2022", "Argentina Programa", "Curso de Desarrollo Web FullStack donde se estudian diversas tecnologías como ser HTML, CSS, Bootstrap, Angular, Java, Spring Boot, entre otras.");
+INSERT habilidad VALUES (4, 1, 2, 1, 'Bootstrap', 70, 'fa-brands fa-html5');
 
-INSERT educacion VALUES (NULL, 1, "Curso de Reparación y armado de redes", "2006", "UTN Mar del plata", "Curso completo de Reparación y armado de redes.");
+INSERT habilidad VALUES (5, 1, 2, 1, 'Angular', 60, 'fa-brands fa-html5');
 
-INSERT experiencia_laboral VALUES(NULL, 1, "Mantenimiento de PC", "2006-2015", "Reparación de Pcs, Notebook, Tablets, Celulares.", "Armado de Pcs, personalizaciones. Instalaciones de software Windows, Antivuirus, actualizaciones en gral.");
+INSERT habilidad VALUES (6, 2, 1, 1, 'Java/Spring Boot', 40, 'fa-brands fa-java');
 
-INSERT proyectos VALUES (NULL, 1, "Portfolio - Argentina Programa ", "Proyecto final realizado durante el Curso de Desarrollo Web Fullstack Argentina Programa. Utiliza herramientas como HTML, CSS, JS (Angular) y Bootstrap.", "assets/project-1.png", "", "https://github.com/FanyDmes/PortfolioEstefaniaDaumes/blob/main/Front-End-Angular/src/index.html");
+INSERT habilidad VALUES (7, 2, 1, 1, ' MySql', 40, 'fa-brands fa-java');
 
-INSERT proyectos VALUES (NULL, 1, "Calculadora", "En este proyecto de calculadora utilicé herramientas como HTML, CSS, JavaScript. Permite ejecutar las cuatro operaciones básicas que son: sumar, restar, multiplicar y dividir, adicionalmente incluye un botón para resetear los resultados en caso de querer realizar una nueva operación.", "assets/project-2.png", "", "");
+INSERT habilidad VALUES (8, 3, 3, 1, 'Workteam', 100, "fa-solid fa-people-carry-box");
+
+INSERT habilidad VALUES (9, 3, 3, 1,'English', 100, 'fa-brands fa-java');
+
+INSERT habilidad VALUES (10, 3, 3, 1,'Predisposición', 100, 'fa-brands fa-java');
+
+INSERT habilidad VALUES (11, 3, 3, 1,' Autodidacta', 100, 'fa-brands fa-java');
+
+INSERT educacion VALUES (1, 1, 'Desarrollo Web Fullstack', '2021 - 2022', 'Argentina Programa', 'Curso de Desarrollo Web FullStack donde se estudian diversas tecnologías como ser HTML, CSS, Bootstrap, Angular, Java, Spring Boot, entre otras.');
+
+INSERT educacion VALUES (2, 1, 'Reparación y armado de redes', '2006', 'UTN Mar del plata', 'Curso completo de Reparación y armado de redes.');
+
+INSERT experiencia_laboral VALUES(1, 1, 'Mantenimiento de PC', '2006-2015', 'Reparación de Pcs, Notebook, Tablets, Celulares.', 'Freelancer', 'Armado de Pcs, personalizaciones. Instalaciones de software Windows, Antivuirus, actualizaciones en general.');
+
+INSERT experiencia_laboral VALUES(2, 1, 'Trasda S.A', '2010-2012', 'Gestoria general.', 'Tareas administrativas.');
+
+INSERT experiencia_laboral VALUES(3, 1, 'Gestoria del Automotor', '2013-2022', 'Trabajo Administrativo.', 'Gestiones varias en el area Automotríz,<br> Transferencias,<br> Prendas,<br> Denuncias de ventas,<br> Informes varios.');
+
+INSERT proyectos VALUES (1, 1, 'Portfolio - Argentina Programa ', 'Proyecto final realizado durante el Curso de Desarrollo Web Fullstack Argentina Programa. Utiliza herramientas como HTML, CSS, JS (Angular) y Bootstrap.', 'assets/project-1.png', 'https://github.com/FanyDmes/PortfolioEstefaniaDaumes/blob/main/Front-End-Angular/src/index.html', 'https://github.com/FanyDmes/PortfolioEstefaniaDaumes/blob/main/Front-End-Angular/src/index.html');
+
+INSERT proyectos VALUES (2, 1, 'Calculadora', 'En este proyecto de calculadora utilicé herramientas como HTML, CSS, JavaScript. Permite ejecutar las cuatro operaciones básicas que son: sumar, restar, multiplicar y dividir, adicionalmente incluye un botón para resetear los resultados en caso de querer realizar una nueva operación.', 'assets/project-2.png', 'https://github.com/FanyDmes', 'https://github.com/FanyDmes');
