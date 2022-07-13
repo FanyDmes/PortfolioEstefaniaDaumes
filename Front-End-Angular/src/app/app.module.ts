@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,7 +15,6 @@ import { ExperienceComponent } from './components/professional-info/experience/e
 import { HttpClientModule } from '@angular/common/http';
 import { EditComponentComponent } from './components/edit-component/edit-component.component';
 import { EditButtonComponent } from './components/edit-component/edit-button/edit-button.component';
-import { FormsModule } from '@angular/forms';
 import { PortfolioDataService } from './services/portfolio-data.service';
 import { ProfessionalItemComponent } from './components/professional-info/professional-item/professional-item.component';
 import { ProfessionalEditComponent } from './components/professional-info/professional-edit/professional-edit.component';
@@ -31,6 +30,8 @@ import { ProjectEditComponent } from './components/projects/project-edit/project
 import { ProjectAddComponent } from './components/projects/project-add/project-add.component';
 import { NavbarEditionComponent } from './components/navbar/navbar-edition/navbar-edition.component';
 import { NavbarItemComponent } from './components/navbar/navbar-item/navbar-item.component';
+
+
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { NavbarItemComponent } from './components/navbar/navbar-item/navbar-item
     ProjectEditComponent,
     ProjectAddComponent,
     NavbarEditionComponent,
-    NavbarItemComponent
+    NavbarItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [PortfolioDataService],
